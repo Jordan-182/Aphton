@@ -109,6 +109,16 @@ nav{
     margin-bottom: 15px;
     padding: 15px;
     border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.bloc:hover:not(.introduction.bloc, .avis.bloc, .contact.bloc){
+    transform: scale(1.01);
+}
+
+.introduction{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 .avatar{
@@ -172,6 +182,13 @@ nav{
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
+}
+
+.footer{
+    width: 100%;
+    height: 200px;
+    background: var(--secondary-color);
+    color: var(--third-color);
 }
 
 @media only screen and (max-width: 720px){
@@ -263,6 +280,11 @@ nav{
         display: block;
         position: relative;
         transform: translateY(100px);
+    }
+
+    .introduction{
+        display: flex;
+        flex-direction: column;
     }
 
     .services{
