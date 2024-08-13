@@ -10,6 +10,10 @@
     --nav-height : 100px;
 }
 
+html, body{
+    height: 100%;
+}
+
 body{
     font-size: 16px;
     background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
@@ -17,13 +21,14 @@ body{
     background-attachment: fixed;
     font-family: var(--primary-font);
     scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
     width: 100%;
     height: auto;
     font-weight: bold;
-    height: var(--nav-height);
 }
 
 nav{
@@ -101,20 +106,58 @@ nav{
 }
 
 .container{
-    width: calc(100% - 40px);
-    height: fit-content;
+    width: 100%;
     margin: 0 auto;
+    position: relative;
+    top: 85px;
+    flex-grow: 1;
 }
 
-.bloc{
+.bloc-white{
     background: var(--secondary-color);
-    margin-bottom: 15px;
     padding: 15px;
-    border-radius: 10px;
     transition: transform 0.3s ease;
 }
 
-.bloc:hover:not(.introduction.bloc, .avis.bloc, .contact.bloc){
+.bloc-color{
+    background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
+    color: var(--secondary-color);
+    padding: 20px;
+}
+
+.bloc-slogan{
+    background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
+    color: var(--secondary-color);
+    padding: 15px;
+}
+
+.bloc-color .title,
+.bloc-color .article-text{
+    color: var(--secondary-color);
+}
+
+.slogan{
+    font-size: 4rem;
+    font-family: var(--secondary-font);
+    text-align: center;
+    padding: 50px 0;
+    line-height: 1.5;
+}
+
+.bloc{
+    border: 2px solid var(--secondary-color);
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px); /* Effet de flou */
+    -webkit-backdrop-filter: blur(10px); /* Support pour Safari */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Bordure pour l'effet de verre */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Ombre douce */
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 30%;
+    padding: 15px;
+}
+
+.bloc:hover{
     transform: scale(1.01);
 }
 
@@ -128,7 +171,7 @@ nav{
     height: 250px;
     border-radius: 50%;
     background: var(--third-color);
-    margin: 0 auto 10px auto;
+    margin: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -137,6 +180,11 @@ nav{
 .avatar img{
     width: 200px;
     height: 200px;
+}
+
+.bloc-intro-left{
+    display: flex;
+    align-items: center;
 }
 
 .bloc-intro-right .title{
@@ -153,6 +201,10 @@ nav{
     color: var(--third-color);
     font-family: var(--secondary-font);
     margin-bottom: 15px;
+}
+
+.center{
+    text-align: center;
 }
 
 .intro-subtitle{
@@ -189,14 +241,39 @@ nav{
 }
 
 .services{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.services-list{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-bottom: 15px;
 }
 
 .avis .title,
 .contact .title{
     text-align: center;
+}
+
+.avis{
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+.avis-list{
+    display: flex;
+    justify-content: space-around;
+}
+
+.avis-card{
+    width: 30%;
+    height: 350px;
+    background: #ffffff;
+    border-radius: 15px;
 }
 
 .contact-container{
@@ -218,7 +295,8 @@ iframe{
     background: var(--secondary-color);
     color: var(--third-color);
     text-align: center;
-    padding: 30px 0;
+    padding: 15px 0;
+    margin-top: 45px;
 }
 
 @media only screen and (max-width: 720px){
@@ -315,6 +393,7 @@ iframe{
     .introduction{
         display: flex;
         flex-direction: column;
+        gap: 15px;
     }
     
     .bloc-intro-right .title{
@@ -334,5 +413,14 @@ iframe{
     .contact-container{
         display: flex;
         flex-direction: column;
+    }
+
+    .services-list{
+        flex-direction: column;
+    }
+
+    .bloc{
+        width: calc(100% - 30px);
+        margin: 0 auto 15px auto;
     }
 }
