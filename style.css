@@ -16,9 +16,6 @@ html, body{
 
 body{
     font-size: 16px;
-    background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
-    background-size: cover;
-    background-attachment: fixed;
     font-family: var(--primary-font);
     scroll-behavior: smooth;
     display: flex;
@@ -120,18 +117,18 @@ nav{
 .band-white{
     background: var(--secondary-color);
     color: var(--third-color);
-    padding: 20px;
+    padding: 20px 20px 30px 20px;
 }
 
 .band-color{
     background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
-    padding: 20px;
+    padding: 20px 20px 30px 20px;
 }
 
 .band-slogan{
     background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
     color: var(--secondary-color);
-    padding: 20px;
+    padding: 25px;
 }
 
 .band-color .title,
@@ -151,6 +148,13 @@ nav{
     margin-bottom: 15px;
 }
 
+.subtitle{
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    text-align: center;
+}
+
 .center{
     text-align: center;
 }
@@ -167,7 +171,7 @@ nav{
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 20px;
+    margin-top: 30px;
     margin-bottom: 5px;
     color: var(--secondary-color);
     background: var(--third-color);
@@ -320,6 +324,12 @@ nav{
     position: relative;
     padding: 20px;
     z-index: 2;
+    flex: none;
+    transition: 0.3s ease;
+}
+
+.avis-card:hover{
+    transform: scale(1.02);
 }
 
 .avis-card::before{
@@ -370,8 +380,30 @@ nav{
     text-align: center;
 }
 
-i{
-    width: 25px;
+.bloc-contact-left{
+    display: flex;
+    flex-direction: column;
+    padding-left: 15%;
+    gap: 5px;
+}
+
+.bloc-contact-left a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.bloc-contact-left a:hover{
+    text-decoration: underline;
+}
+
+.social{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.social .article-text i .fa-solid{
+    width: 50px;
 }
 
 iframe{
