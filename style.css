@@ -17,6 +17,7 @@ html, body{
 body{
     font-size: 16px;
     font-family: var(--primary-font);
+    background: var(--secondary-color);
     scroll-behavior: smooth;
     display: flex;
     flex-direction: column;
@@ -220,10 +221,10 @@ nav{
 .btn{
     padding: 10px;
     border-radius: 5px;
+    margin-top: auto;
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-    margin-top: 15px;
     color: var(--secondary-color);
     background: var(--third-color);
     border: 2px solid var(--third-color);
@@ -292,10 +293,6 @@ nav{
     margin-top: 20px;
 }
 
-.bloc-intro-right .btn{
-    margin-top:20px;
-}
-
 /* FIN DU CONTENU DU BANDEAU INTRODUCTION */
 
 /* CETTE PARTIE CONCERNE LE CONTENU DU BANDEAU SERVICES */
@@ -324,11 +321,27 @@ nav{
     transition: transform 0.3s ease;
     width: 25%;
     min-width: 350px;
+    height: 550px;
     padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card .article-text{
+    flex-grow: 1;
 }
 
 .service-card:hover{
     transform: scale(1.01);
+}
+
+.service-card-illustration{
+    height: 250px;
+    width: 250px;
+    margin-bottom: 15px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 /* FIN DU CONTENU DU BANDEAU SERVICES */
@@ -412,37 +425,6 @@ nav{
     text-align: center;
 }
 
-/* form{
-    display: flex;
-    flex-direction: column;
-    margin: 0 auto 20px auto;
-    text-align: center;
-    width: 500px;
-    max-width: calc(100% - 40px);
-    color: var(--secondary-color);
-    border: 2px solid var(--secondary-color);
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px); 
-    -webkit-backdrop-filter: blur(10px); 
-    border: 1px solid rgba(255, 255, 255, 0.3); 
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
-    padding: 20px;
-}
-
-input{
-    height: 20px;
-    border-radius: 5px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-}
-
-textarea{
-    border-radius: 10px;
-    margin-top: 5px;
-    margin-bottom: 10px;
-} */
-
 .submit-btn{
     width: 150px;
     margin: 0 auto;
@@ -452,8 +434,12 @@ textarea{
 .bloc-contact-left{
     display: flex;
     flex-direction: column;
-    padding-left: 15%;
     gap: 5px;
+}
+
+.bloc-contact-left .article-text:not(.social .article-text){
+    position: relative;
+    left: 25%;
 }
 
 .bloc-contact-left a{
@@ -465,8 +451,12 @@ textarea{
     text-decoration: underline;
 }
 
+.bloc-contact-left .subtitle:not(:first-child){
+    margin-top: 20px;
+}
+
 .social{
-    margin-top: 10px;
+    margin-top: 5px;
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -477,12 +467,12 @@ textarea{
 }
 
 .social .article-text i{
-    font-size: 3rem;
+    font-size: 2rem;
 }
 
 iframe{
     width: 100%;
-    height: 300px;
+    height: 320px;
 }
 
 /* FIN DU CONTENU DU BANDEAU CONTACT */
@@ -647,6 +637,10 @@ iframe{
     .bloc-contact-left .subtitle{
         margin-top: 10px;
         margin-bottom: 10px;
+    }
+
+    .bloc-contact-left .article-text:not(.social .article-text){
+        left: 0;
     }
 
     .bloc-contact-left .cta-reverse{
