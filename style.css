@@ -213,9 +213,9 @@ nav{
 }
 
 .cta-reverse button:hover{
-    background: var(--third-color);
+    background: transparent;
     color: var(--secondary-color);
-    border: 2px solid var(--third-color);
+    border: 2px solid var(--secondary-color);
 }
 
 .btn{
@@ -233,7 +233,7 @@ nav{
 }
 
 .btn:hover{
-    background: var(--secondary-color);
+    background: transparent;
     color: var(--third-color);
     border: 2px solid var(--third-color);
 }
@@ -332,7 +332,7 @@ nav{
 }
 
 .service-card:hover{
-    transform: scale(1.01);
+    transform: translateY(-5px);
 }
 
 .service-card-illustration{
@@ -356,13 +356,32 @@ nav{
 .avis-list{
     display: flex;
     justify-content: center;
+    margin: 0 auto;
     flex-wrap: wrap;
+    width: 80%;
+    max-width: 940px;
+    gap: 10px;
+}
+
+.slick-track{
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
     gap: 20px;
 }
 
+.slick-next{
+    right: -35px;
+}
+
+.slick-prev:before, 
+.slick-next:before{
+    color: var(--third-color);
+}
+
 .avis-card{
-    width: 250px;
-    height: 280px;
+    width: 250px !important;
+    height: 300px;
     background: linear-gradient(to bottom right, var(--primary-color), var(--third-color));
     color: black;
     border-radius: 15px;
@@ -374,7 +393,7 @@ nav{
 }
 
 .avis-card:hover{
-    transform: scale(1.02);
+    transform: translateY(-5px);
 }
 
 .avis-card::before{
@@ -382,11 +401,12 @@ nav{
     position: absolute;
     width: 97%;
     height: 97%;
-    top: 4px;
+    top: 5px;
     left: 4px;
     background: #ffffff;
     border-radius: 15px;
     z-index: -1;
+    flex: none;
 }
 
 .avis .title{
