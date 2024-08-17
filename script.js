@@ -21,3 +21,23 @@ new ResizeObserver(entries =>{
 }).observe(document.body)
 
 // ------------------------------- //
+
+// ----- ANIMATIONS GSAP ----- //
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Initialisation de Splitting.js pour séparer les lettres
+    Splitting();
+
+    // Animation de chaque lettre avec GSAP
+    gsap.from(".slogan span", {
+        duration: 0.8,
+        opacity: 0,
+        y: -20,
+        stagger: 0.05,
+        ease: "power2.out",
+        onStart: function() {
+            // Faire apparaître le texte globalement au début de l'animation
+            gsap.set(".slogan", { opacity: 1 });
+        }
+    });
+});
