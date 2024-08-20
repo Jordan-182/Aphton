@@ -118,23 +118,23 @@ nav{
 .band-white{
     background: var(--secondary-color);
     color: var(--third-color);
-    padding: 20px 20px 30px 20px;
+    padding: 20px 30px;
 }
 
 .band-color{
     background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
-    padding: 20px 20px 30px 20px;
+    padding: 20px 30px;
 }
 
 .band-color-reverse{
     background: linear-gradient(to top, var(--primary-color), var(--third-color));
-    padding: 20px 20px 30px 20px;
+    padding: 20px 30px;
 }
 
 .band-slogan{
     background: linear-gradient(to bottom, var(--primary-color), var(--third-color));
     color: var(--secondary-color);
-    padding: 25px;
+    padding: 20px;
 }
 
 .band-color .title,
@@ -144,22 +144,28 @@ nav{
     color: var(--secondary-color);
 }
 
+.illustration-right{
+    width: 350px;
+    float: right;
+    margin-left: 20px;
+}
+
 .illustration-right img{
     width: 350px;
     height: auto;
-    float: right;
     border-radius: 10px;
-    margin-left: 20px;
-    margin-top: 15px;
+}
+
+.illustration-left{
+    width: 350px;
+    float: left;
+    margin-right: 20px;
 }
 
 .illustration-left img{
     width: 350px;
     height: auto;
-    float: left;
     border-radius: 10px;
-    margin-right: 20px;
-    margin-top: 15px;
 }
 
 /* FIN DE LA STRUCTURE */
@@ -174,11 +180,21 @@ nav{
     margin-bottom: 15px;
 }
 
+.title-center{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
+    font-family: var(--secondary-font);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
 .subtitle{
     font-size: 1.5rem;
     color: var(--secondary-color);
     font-family: var(--secondary-font);
     text-align: center;
+    margin-bottom: 15px;
 }
 
 .subtitle-color{
@@ -196,6 +212,14 @@ nav{
 .article-text{
     color: var(--third-color);
     font-family: var(--primary-font);
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.text-center{
+    text-align: center;
 }
 
 .cta{
@@ -241,6 +265,31 @@ nav{
 }
 
 .cta-reverse:hover{
+    background: transparent;
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+}
+
+.cta-reverse-center{
+    width: 250px;
+    padding: 10px 5px;
+    margin: 5px auto 20px auto;
+    border-radius: 5px;
+    font-size: 1.03rem;
+    font-weight: bold;
+    font-family: var(--primary-font);
+    color: var(--third-color);
+    background: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    cursor: pointer;
+    transition: 0.3s ease;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    display: block;
+}
+
+.cta-reverse-center:hover{
     background: transparent;
     color: var(--secondary-color);
     border: 2px solid var(--secondary-color);
@@ -361,8 +410,7 @@ a .btn{
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Ombre douce */
     border-radius: 10px;
     transition: transform 0.3s ease;
-    width: 25%;
-    min-width: 350px;
+    width: 340px;
     height: 550px;
     padding: 15px;
     display: flex;
@@ -716,13 +764,9 @@ iframe{
         margin-top: 0;
     }
 
-    .illustration-right img{
+    .illustration-right,
+    .illustration-left{
+        margin: 0 auto 10px auto;
         float: none;
-        margin: 0 auto;
-    }
-    
-    .illustration-left img{
-        float: none;
-        margin: 0 auto;
     }
 }
