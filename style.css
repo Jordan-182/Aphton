@@ -691,6 +691,18 @@ iframe{
         transform: translateY(100px);
     }
 
+    .band-slogan{
+        max-height: 100dvh;
+    }
+
+    .slogan{
+        font-size: 3rem;
+        font-family: var(--secondary-font);
+        text-align: center;
+        padding: 15px 0;
+        line-height: 1.5;
+    }
+
     .introduction{
         display: flex;
         flex-direction: column;
