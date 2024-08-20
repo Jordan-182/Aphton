@@ -699,8 +699,8 @@ iframe{
         font-size: 3rem;
         font-family: var(--secondary-font);
         text-align: center;
-        padding: 15px 0;
-        line-height: 1.5;
+        padding: 10px 0;
+        line-height: 1.2;
     }
 
     .introduction{
